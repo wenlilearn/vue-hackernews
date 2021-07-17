@@ -1,11 +1,9 @@
+import {shallowMount} from '@vue/test-utils'
 import Item from "../Item.vue"
-import Vue from 'vue'
-
 
 describe("Item.vue", () => {
-  test(
-    'sanity test', () => {
-      expect(true).toBe(true)
-    }
-  )
+  test("renders 'item'", () => {
+    const wrapper = shallowMount(Item) 
+    expect(wrapper.vm.$el.textContent).toContain('item')
+  })
 })

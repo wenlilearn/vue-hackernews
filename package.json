@@ -6,12 +6,14 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:unit": "jest --no-cache",
-    "test:watch": "jest --no-cache --watch"
+    "test": "jest --no-cache --forceExit --detectOpenHandles",
+    "test:unit": "jest --no-cache --forceExit --detectOpenHandles",
+    "test:unit:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --no-cache --runInBand",
+    "test:watch": "jest --no-cache --watch --detectOpenHandles"
   },
   "dependencies": {
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
-    "firebase": "^5.0.4",
+    "firebase": "^8.7.1",
     "vue": "^2.5.16"
   },
   "devDependencies": {
@@ -19,9 +21,10 @@
     "@vue/cli-plugin-eslint": "^3.0.0-beta.16",
     "@vue/cli-service": "^3.0.0-beta.15",
     "@vue/eslint-config-standard": "^3.0.0-beta.16",
+    "@vue/test-utils": "^1.0.0-beta.20",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
-    "chromedriver": "^2.43.0",
+    "chromedriver": "^91.0.1",
     "cross-env": "^5.2.0",
     "flush-promises": "^1.0.0",
     "geckodriver": "^1.12.2",
